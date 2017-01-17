@@ -7,7 +7,7 @@ var Panier = function(){
 	this.totalHT = 0;
 	this.totalTTC = 0;
 	this.ajoute = function(produit){
-		console.log('Ajout du produit > ' + produit.nom);
+		console.log('Ajout du produit  ' + produit.nom);
 		this.totalHT = this.totalHT + produit.prix;
 	};
 	this.retire = function(produit){};
