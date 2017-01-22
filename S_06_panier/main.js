@@ -7,17 +7,19 @@ var Panier = function(){
 	this.totalHT = 0;
 	this.totalTTC = 0;
 	this.ajoute = function(produit){
-		console.log('Ajout du produit  ' + produit.nom);
+		console.log(produit);
 		this.totalHT = this.totalHT + produit.prix;
+    this.totalTTC = this.totalHT *1.196;
 	};
-	this.retire = function(produit){};
+	this.retire = function(produit){
+		console.log(produit);
+    this.totalHT = this.totalHT - produit.prix;
+  };
 
 }
 var baguette = new Produit('baguette', 0.87);
 var croissant = new Produit('croissant', 0.81);
 var panier = new Panier();
-console.log('total Ht du panier : ' + panier.totalHT);
 panier.ajoute(baguette);
-console.log('total Ht du panier : ' + panier.totalHT);
 panier.ajoute(croissant);
-console.log('total Ht du panier : ' + panier.totalHT);
+panier.retire (baguette)
